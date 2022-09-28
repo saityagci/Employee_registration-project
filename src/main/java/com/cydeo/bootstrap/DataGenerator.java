@@ -1,6 +1,7 @@
 package com.cydeo.bootstrap;
 
 import com.cydeo.model.Employee;
+import org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoConfiguration;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -61,6 +62,13 @@ public class DataGenerator {
                 "Wisconsin",
                 "WestVirginia",
                 "Wyoming");
+    }
+    private static List<Employee> employeeList=new ArrayList<>();
+    public static void saveEmployee(Employee employee){
+        employeeList.add(employee);
+    }
+    public static List<Employee> readAllEmployee(){
+        return employeeList;
     }
 
 
